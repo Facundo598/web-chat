@@ -21,8 +21,6 @@
     <p>Este es un contador simple que cuenta hasta diez y luego se reinicia.</p>
     <div id="counter">0</div>
 
-    <div id="resultado"></div> <!-- Aquí es donde se mostrarán los resultados -->
-
     <!-- Enlace que redirige a otra página web -->
     <p>
         <a href="https://www.google.com" target="_blank">Ir a Google</a>
@@ -49,19 +47,6 @@
 
         // Iniciar el contador cuando la página se carga completamente
         window.onload = startCounter;
-    </script>
-
-    <script>
-        // Hacer una solicitud HTTP GET al servidor que ejecuta scrape_google.py
-        fetch('https://raw.githubusercontent.com/Facundo598/web-chat/main/nww/scrape_google.py')
-            .then(response => response.text())
-            .then(data => {
-                // Mostrar los datos en el elemento con id "resultado"
-                document.getElementById('resultado').innerText = data;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
     </script>
 </body>
 </html>
