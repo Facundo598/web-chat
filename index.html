@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #counter {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a mi página web</h1>
+    <p>Este es un contador simple que cuenta hasta diez y luego se reinicia.</p>
+    <div id="counter">0</div>
+
+    <script>
+        // Función para iniciar el contador
+        function startCounter() {
+            let count = 0;
+            const counterElement = document.getElementById('counter');
+
+            // Función para actualizar el contador
+            function updateCounter() {
+                count++;
+                counterElement.textContent = count;
+                if (count === 10) {
+                    count = 0; // Reiniciar el contador cuando llega a 10
+                }
+            }
+
+            // Llamar a updateCounter cada segundo (1000 milisegundos)
+            setInterval(updateCounter, 1000);
+        }
+
+        // Iniciar el contador cuando la página se carga completamente
+        window.onload = startCounter;
+    </script>
+</body>
+</html>
